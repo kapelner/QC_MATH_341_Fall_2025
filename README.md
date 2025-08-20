@@ -1,0 +1,58 @@
+# MATH 341 / 641 Fall 2024
+
+This is the course homepage for Math 341 / 641 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be read [here](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/syllabus/syllabus.pdf) and downloaded [here](https://raw.githubusercontent.com/kapelner/QC_MATH_341_Fall_2025/main/syllabus/syllabus.pdf).
+
+
+## Lectures
+
+My lecture notes are scanned in as PDF files contributed by myself and are found on [a previous year's website](https://github.com/kapelner/QC_MATH_341_Fall_2023). 
+
+
+## Homeworks
+
+Homeworks are emailed to kapelner@gmail.com by the time indicated on the PDF.
+
+<!-- * Homework 7 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf) (due 12/14)
+* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf) (due 11/27)
+* Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf) (due 11/15)
+* Homework 4 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf) (due 10/28)
+* Homework 3 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf) (due 10/7)
+* Homework 2 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf) (due 9/23) -->
+* Homework 1 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw01/hw01.pdf) (due 9/8)
+
+
+## Exams
+
+* Midterm I, Tues, Sept 30 
+* Midterm II, Tues, Nov 18 
+* Final, TBA
+
+## Practice Exams
+
+* Midterm I [(exam 4)](https://github.com/kapelner/QC_MATH_341_Fall_2024/blob/main/exams/midterm1/midterm1.pdf) [(solutions 4)](https://github.com/kapelner/QC_MATH_341_Fall_2024/blob/main/exams/midterm1/midterm1_solutions.pdf) [(exam 3)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm1/midterm1.pdf) [(solutions 3)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm1/midterm1_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/exams/midterm1/midterm1.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/exams/midterm1/midterm1_solutions.pdf) [(exam 1)](https://github.com/kapelner/QC_Math_369_Fall_2020/blob/master/exams/midterm1/midterm1.pdf) [(solutions 1)](https://github.com/kapelner/QC_Math_369_Fall_2020/blob/master/exams/midterm1/midterm1_solutions.pdf)
+
+* Midterm II [(exam 4)](https://github.com/kapelner/QC_MATH_341_Fall_2024/blob/main/exams/midterm2/midterm2.pdf) [(solutions 4)](https://github.com/kapelner/QC_MATH_341_Fall_2024/blob/main/exams/midterm2/midterm2_solutions.pdf) [(exam 3)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm2/midterm2.pdf) [(solutions 3)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm2/midterm2_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/exams/midterm2/midterm2.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/exams/midterm2/midterm2_solutions.pdf) [(exam 1)](https://github.com/kapelner/QC_Math_369_Fall_2020/blob/master/exams/midterm2/midterm2.pdf) [(solutions 1)](https://github.com/kapelner/QC_Math_369_Fall_2020/blob/master/exams/midterm2/midterm2_solutions.pdf)
+
+* Final [(exam 4)](https://github.com/kapelner/QC_MATH_341_Fall_2024/blob/main/exams/final/final.pdf) [(solutions 4)](https://github.com/kapelner/QC_MATH_341_Fall_2024/blob/main/exams/final/final_solutions.pdf) [(exam 3)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/final/final.pdf) [(solutions 3)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/final/final_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/exams/final/final.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/exams/final/final_solutions.pdf) [(exam 2)](https://github.com/kapelner/QC_Math_369_Fall_2020/blob/master/exams/final/final.pdf) [(solutions 2)](https://github.com/kapelner/QC_Math_369_Fall_2020/blob/master/exams/final/final_solutions.pdf)
+
+
+## Optional Recitation Section
+
+Teaching Assistant: Bryan Nevarez
+Time: Wed 1:45-2:35PM
+Location: KY 277
+
+## Office Hours
+
+I *want* you to come to office hours! My office hours are:
+
+Time: Lecture days (Tu/Th) 6:30-6:45PM and 8:35-8:50PM \
+Location: KY 258
+
+## Change of Schedule
+
+* There will be a midterm 1 review session on Sunday Sept 28 8-9:50PM on zoom in lieu of the Oct 7 class day I cannot attend.
+
+## Grades and Class Standing
+
+You can check your grades in realtime at [http://qc.gradesly.com](http://qc.gradesly.com). You type in your email (or CUNYFirst ID#) and the password (which was emailed to you at the beginning of the semester).
