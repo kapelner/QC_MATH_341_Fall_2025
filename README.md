@@ -16,8 +16,8 @@ Homeworks are to be emailed by the time indicated on the PDF to Bryan Nevarez, t
 * Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf) (due 11/27)
 * Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf) (due 11/15)
 * Homework 4 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf) (due 10/28)
-* Homework 3 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf) (due 10/7)
-* Homework 2 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf) (due 9/23) -->
+* Homework 3 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf) (due 10/7) -->
+* Homework 2 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf) (due 9/22)
 * Homework 1 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw01/hw01.pdf) (due 9/8)
 
 
