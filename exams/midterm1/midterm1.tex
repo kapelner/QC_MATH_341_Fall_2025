@@ -72,7 +72,7 @@ $\Xbar$
 \subquestionwithpoints{3} What is the MM estimate for $\expe{X}$? Round to the nearest two decimals.
 
 \iftoggle{solutions}{\inred{
-$\xbar = 2.72$
+$\xbar = 3.51$
 }}{~\spc{1}}
 
 \pagebreak
@@ -125,7 +125,7 @@ X \sim \text{Gamma}(4, \theta) := \frac{\theta^{4}}{6} x^3 e^{-\theta x}\indic{x
 \iftoggle{solutions}{\inred{
 
 \beqn
-\mathcal{L}(\theta; \X) &=& \prod_{i=1}^n \frac{\theta^{4}}{6} X_i^3 e^{-\theta X_i} = \frac{\theta^{4n}}{6^n} X_i^{3n} e^{-\theta \displaystyle\sum_{i=1}^n X_i} \\
+\mathcal{L}(\theta; \X) &=& \prod_{i=1}^n \frac{\theta^{4}}{6} X_i^3 e^{-\theta X_i} = \frac{\theta^{4n}}{6^n} X_i^{3n} \exp{-\theta \displaystyle\sum_{i=1}^n X_i} \\
 \ell(\theta; \X) &=& 4n \natlog{\theta} - n \natlog{6} - \theta \displaystyle\sum_{i=1}^n X_i \\
 \ell'(\theta; \X) &=& \frac{4n}{\theta} - \sum_{i=1}^n X_i ~~{\buildrel \text{set} \over =}~~ 0 \mathimplies \frac{4n}{\theta} = \sum_{i=1}^n X_i \mathimplies \thetahatmle = \frac{4n}{\sum_{i=1}^n X_i} = \frac{4}{\Xbar}
 \eeqn
@@ -147,7 +147,7 @@ X \sim \text{Gamma}(4, \theta) := \frac{\theta^{4}}{6} x^3 e^{-\theta x}\indic{x
 \iftoggle{solutions}{\inred{
 
 \beqn
-\ell''(\theta; \X) = -\frac{4n}{\theta^2},~~ I_n(\theta) = \expe{-\ell''(\theta; \x)} = \expe{-\parens{-\frac{4n}{\theta^2}}} = \frac{4n}{\theta^2},~~~ \var{\thetahat} \geq \frac{1}{I_n(\theta)} = \frac{\theta^2}{4n}
+I_n(\theta) = \expe{-\ell''(\theta; \x)} = \expe{-\parens{-\frac{4n}{\theta^2}}} = \frac{4n}{\theta^2},~~~ \var{\thetahat} \geq \frac{1}{I_n(\theta)} = \frac{\theta^2}{4n}
 \eeqn
 }}{~\spc{12}}
 
@@ -264,7 +264,7 @@ Binomial Exact Test
 \subquestionwithpoints{3} In order to calculate the power of this test, what information would you need?
 
 \iftoggle{solutions}{\inred{
-The true distribution of $\thetahat$.
+The true distribution of $\thetahat$ (which is equivalent to knowing $\theta$ in the iid Bernoulli DGP).
 }}{~\spc{1}}
 
 
