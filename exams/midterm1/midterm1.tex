@@ -1,0 +1,294 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{solutions}
+%\toggletrue{solutions}
+
+\title{Math 341 / 641 Fall \the\year{} \\ Midterm Examination One}
+\author{Professor Adam Kapelner}
+\date{Sept 30, \the\year{}}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.\\
+\\
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\~\\
+
+\begin{center}
+\line(1,0){350} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 110 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper (provided by the proctor) and a graphing calculator (which is not your smartphone). Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\problem Consider the following rv and some of its properties:
+
+\beqn
+X \sim \text{Gamma}(\theta_1, \theta_2) := \frac{\theta_2^{\theta_1}}{\Gammaf{\theta_1}} x^{\theta_1 - 1} e^{-\theta_2 x}\indic{x > 0},~~~\theta_1 > 0,~~ \theta_2 > 0,~~ \expe{X} = \frac{\theta_1}{\theta_2}, ~~ \var{X} = \frac{\theta_1}{\theta_2^2}
+\eeqn
+
+\noindent We realize $n = 100$ iid realizations from this DGP and calculate the following quantities rounded to two decimals:
+
+\beqn
+\xbar := \oneover{n} \sum_{i=1}^n x_i &=& 3.51 \\%, ~~~~~~ \oneover{n} \sum_{i=1}^n x_i^6 = 3071.00  \\
+\oneover{n} \sum_{i=1}^n x_i^2 &=& 7.89 \\%, ~~~~~~ \oneover{n} \sum_{i=1}^n x_i^7 = 16475.31 \\
+\oneover{n} \sum_{i=1}^n x_i^3 &=& 29.62 \\%, ~~~~~~ \oneover{n} \sum_{i=1}^n x_i^8 = 91664.09  \\
+\oneover{n} \sum_{i=1}^n x_i^4 &=& 127.21 \\ %, ~~~~~~ \oneover{n} \sum_{i=1}^n x_i^9 = 523306.42  \\
+\oneover{n} \sum_{i=1}^n x_i^5 &=& 602.66 \\%, ~~~~~~ \oneover{n} \sum_{i=1}^n x_i^{10} = 3042898.00  \\
+\eeqn
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} Observing $n = 100$ iid realizations from this DGP is equivalent to sampling an SRS of $n = 100$ from a population with which propert(ies)?
+
+\iftoggle{solutions}{\inred{
+Infinitely large
+}}{~\spc{1}}
+
+\subquestionwithpoints{3} Find the method of moments (MM) estimator for $\expe{X}$.
+
+\iftoggle{solutions}{\inred{
+$\Xbar$
+}}{~\spc{1}}
+
+\subquestionwithpoints{3} What is the MM estimate for $\expe{X}$? Round to the nearest two decimals.
+
+\iftoggle{solutions}{\inred{
+$\xbar = 2.72$
+}}{~\spc{1}}
+
+\pagebreak
+
+\subquestionwithpoints{6} Find the MM estimator for $\theta_2$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+&& \expe{X} = \muhat_1 = \frac{\theta_1}{\theta_2}, ~~\var{X} = \muhat_2 - \muhat_1^2 = \frac{\theta_1}{\theta_2^2} \\
+&& \mathimplies \theta_1 = \muhat_1 \theta_2 \mathimplies \muhat_2 - \muhat_1^2 = \frac{\muhat_1 \theta_2}{\theta_2^2} = \frac{\muhat_1}{\theta_2} \mathimplies \thetahatmm_2 = \frac{\muhat_1}{\muhat_2 - \muhat_1^2}
+%\muhat_2 - \squared{\frac{\theta_1}{\theta_2}} = \frac{\theta_1}{\theta_2^2} \\
+\eeqn
+}}{~\spc{7}}
+
+\subquestionwithpoints{3} What is the MM estimate for $\theta_2$? Round to the nearest two decimals.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\thetahathatmm_2 = \frac{\muhathat_1}{\muhathat_2 - \muhathat_1^2} = \frac{3.51}{7.89 - 3.51^2} = -0.79
+\eeqn
+}}{~\spc{1}}
+
+\subquestionwithpoints{4} Does the MM estimate for $\theta_2$ make sense? Why or why not?
+
+\iftoggle{solutions}{\inred{
+No, it is negative and the parameter space for $\theta_2$ is positive.
+}}{~\spc{1}}
+
+
+\subquestionwithpoints{5} Find a MM estimator for $\theta_1$.
+
+\iftoggle{solutions}{\inred{
+
+We use intermediate results and our result found in (d)
+
+\beqn
+&& \theta_1 = \muhat_1 \theta_2, ~~~\thetahatmm_2 = \frac{\muhat_1}{\muhat_2 - \muhat_1^2} \mathimplies \thetahatmm_1 = \muhat_1 \parens{\frac{\muhat_1}{\muhat_2 - \muhat_1^2}} = \frac{\muhat_1^2}{\muhat_2 - \muhat_1^2}
+\eeqn
+}}{~\spc{6}}
+\pagebreak
+
+Now consider the scenario where we know that the value of $\theta_1 = 4$. The constant in the denominator can be calculated to be 6. Now, there is only one parameter, so we simplify the expression and just denote it $\theta$. Thus,
+
+\beqn
+X \sim \text{Gamma}(4, \theta) := \frac{\theta^{4}}{6} x^3 e^{-\theta x}\indic{x > 0}
+\eeqn
+
+\subquestionwithpoints{7} Show that $\thetahatmle = \frac{4}{\Xbar}$ for general sample of size $n$. All data is properly realized and are positive values and thus you can drop the indicator term during your calculation.
+
+\iftoggle{solutions}{\inred{
+
+\beqn
+\mathcal{L}(\theta; \X) &=& \prod_{i=1}^n \frac{\theta^{4}}{6} X_i^3 e^{-\theta X_i} = \frac{\theta^{4n}}{6^n} X_i^{3n} e^{-\theta \displaystyle\sum_{i=1}^n X_i} \\
+\ell(\theta; \X) &=& 4n \natlog{\theta} - n \natlog{6} - \theta \displaystyle\sum_{i=1}^n X_i \\
+\ell'(\theta; \X) &=& \frac{4n}{\theta} - \sum_{i=1}^n X_i ~~{\buildrel \text{set} \over =}~~ 0 \mathimplies \frac{4n}{\theta} = \sum_{i=1}^n X_i \mathimplies \thetahatmle = \frac{4n}{\sum_{i=1}^n X_i} = \frac{4}{\Xbar}
+\eeqn
+}}{~\spc{8}}
+
+\subquestionwithpoints{3} Show that this MLE is indeed a maximum of the log-likelihood by using a second derivative check. Explain your reasoning.
+
+\iftoggle{solutions}{\inred{
+
+\beqn
+\ell''(\theta; \X) = -\frac{4n}{\theta^2} < 0 ~~~\text{since $n \in \naturals$, the sample size and $\theta > 0$, the parameter space}
+\eeqn
+}}{~\spc{6}}
+
+\pagebreak
+
+\subquestionwithpoints{6} Derive the CRLB for $\theta$ in the DGP $X \sim \text{Gamma}(4, \theta)$.
+
+\iftoggle{solutions}{\inred{
+
+\beqn
+\ell''(\theta; \X) = -\frac{4n}{\theta^2},~~ I_n(\theta) = \expe{-\ell''(\theta; \x)} = \expe{-\parens{-\frac{4n}{\theta^2}}} = \frac{4n}{\theta^2},~~~ \var{\thetahat} \geq \frac{1}{I_n(\theta)} = \frac{\theta^2}{4n}
+\eeqn
+}}{~\spc{12}}
+
+
+\subquestionwithpoints{1} It can be shown that 
+
+\beqn
+\expe{\thetahatmle} = \frac{4n}{4n-1} \theta.
+\eeqn
+
+Is $\thetahatmle$ unbiased? Yes or no.
+
+\iftoggle{solutions}{\inred{
+No
+}}{~\spc{0}}
+\pagebreak
+
+\subquestionwithpoints{6} It can be shown that 
+
+\beqn
+\var{\thetahatmle} = \frac{(4n)^2}{(4n-1)^2(4n-2)} \theta^2.
+\eeqn
+
+Calculate $\mse{\thetahatmle}$ as a function of $n$ and $\theta$. Simplify as much as you can.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+\mse{\thetahatmle} &=& \bias{\thetahatmle}^2 + \var{\thetahatmle} \\
+&=& \parens{\frac{4n}{4n-1} \theta - \theta}^2 + \frac{(4n)^2}{(4n-1)^2(4n-2)} \theta^2 \\
+&=& \parens{\parens{\frac{4n}{4n-1}  - 1}^2 + \frac{(4n)^2}{(4n-1)^2(4n-2)}} \theta^2 \\
+&=& \parens{\parens{\frac{1}{4n-1}}^2 + \frac{(4n)^2}{(4n-1)^2(4n-2)}} \theta^2 \\
+&=& \parens{\frac{(4n-2)}{(4n-1)^2 (4n-2)} + \frac{(4n)^2}{(4n-1)^2(4n-2)}} \theta^2 \\
+&=& \frac{(4n)^2 + 4n-2}{(4n-1)^2(4n-2)} \theta^2 \\
+\eeqn
+}}{~\spc{11}}
+
+\subquestionwithpoints{5} Under squared error loss, compute $\displaystyle\sup_{\theta \in \Theta} \braces{R(\thetahatmle, \theta)}$.
+
+\iftoggle{solutions}{\inred{
+$\infty$
+}}{~\spc{2}}
+
+\end{enumerate}
+\pagebreak
+
+\problem Consider a survey of iPhoneness. $n=27$ students were chosen outside of Kiely Hall on Tuesday afternoon, Sept 30, 2025 were asked if they had an iPhone ($x_i = 1$) or not ($x_i = 0$). In total, 23 students had iPhones. We wish to infer about the population of all QC undergraduate students.
+
+
+\begin{enumerate}
+
+\subquestionwithpoints{4} Is this sample an SRS from the population of interest? Why or why not?
+
+\iftoggle{solutions}{\inred{
+You can say yes but you must argue that students at CUNY take classes at uniformly random times in uniformly random locations. Likely the answer is no because if you are on campus on Tuesday afternoon you are not a weekend student (those of which may be different socioeconomically). Also, Kiely Hall has more STEM classes than other buildings so those students may not be representative of all undergraduates either.
+}}{~\spc{5}}
+
+Regardless of what you wrote in (a), consider this sample to be an SRS from the population of interest for the rest of this question.
+
+
+\subquestionwithpoints{9} The US mean countrywide proportion of iPhones is estimated to be 62\%. Prove via a hypothesis test at $\alpha = 5\%$ using the one-proportion Z-test that the QC population has higher iPhone proportion than the countrywide mean. Your answer must include a clear setup of the two hypotheses, a retainment region and a decision. Do not interpret the decision nor find Fisher's $p_{val}$. Those will be asked in subsequent questions.
+
+\iftoggle{solutions}{\inred{
+$H_0: \theta \leq .62,~H_a: \theta > .62$. We can then build the retainment region for $\alpha=0.05$ with the relevant $z_{1 - \alpha} = 1.65$ as it's one sided. So 
+
+\beqn
+RET = \Bigg(-\infty, \theta_0 + z_{1 - \alpha} \sqrt{\overn{\theta_0 (1 - \theta_0)}}\Bigg] = \Bigg(-\infty, .62 + 1.65 \sqrt{\frac{.62 (1-0.62)}{27}}\Bigg] = (-\infty, .774] 
+\eeqn
+
+Now we calculate $\xbar = 23/27 = .852 \notin RET$ hence $H_0$ is rejected.
+}}{~\spc{6}}
+\pagebreak
+
+\subquestionwithpoints{4} Interpret your decision from the previous question.
+
+\iftoggle{solutions}{\inred{
+There is statistically significant evidence to conclude that the QC population has a higher iPhone proportion than the countrywide mean.
+}}{~\spc{3}}
+
+
+\subquestionwithpoints{2} If your decision was an error, what type of error was it?
+
+\iftoggle{solutions}{\inred{
+Type I
+}}{~\spc{0}}
+
+\subquestionwithpoints{6} Represent Fisher's $p_{val}$ by using the $\Phi$ notation (i.e. the CDF of the standard normal).
+
+\iftoggle{solutions}{\inred{
+\beqn
+p_{val} &=& \cprob{\thetahat > \thetahathat}{H_0} \\
+&=& \cprob{\thetahat > .852}{\thetahat \sim \normnot{.62}{\frac{.62 (1-0.62)}{27}}} \\
+&=& \prob{\frac{\thetahat - .62}{\sqrt{\frac{.62 (1-0.62)}{27}}} > \frac{.852 - .62}{\sqrt{\frac{.62 (1-0.62)}{27}}}} \\
+&=& \prob{Z > 2.48} \\
+&=& 1 - \Phi(2.48)
+\eeqn
+}}{~\spc{8}}
+
+
+\subquestionwithpoints{3} Why is the $p_{val}$ from the previous question approximate?
+
+\iftoggle{solutions}{\inred{
+We used the standard normal as the result of the CLT which is approximate for any finite sample size.
+}}{~\spc{3}}
+\pagebreak
+
+\subquestionwithpoints{1} If you wanted an exact test, what is the name of the test would you use?
+
+\iftoggle{solutions}{\inred{
+Binomial Exact Test
+}}{~\spc{0}}
+
+
+\subquestionwithpoints{3} In order to calculate the power of this test, what information would you need?
+
+\iftoggle{solutions}{\inred{
+The true distribution of $\thetahat$.
+}}{~\spc{1}}
+
+
+\subquestionwithpoints{3} If you ran the test with $\alpha = 6\%$ instead of the original 5\%, would power increase or decrease?
+
+\iftoggle{solutions}{\inred{
+increase
+}}{~\spc{0}}
+
+\subquestionwithpoints{5} If the null hypothesis were true, as the sample size approaches infinity, what would the decision of the test be?
+
+\iftoggle{solutions}{\inred{
+You would still fail to reject. You are only guaranteed to reject if the null is false (even by a hairbreadth $\delta$).
+}}{~\spc{3}}
+
+\subquestionwithpoints{5} In order to calculate a 95\% CI for $\theta$, what specific information do you need? Note: this is a difficult question.
+
+\iftoggle{solutions}{\inred{
+When inverting the test, you'll see that you need the actual value of $\theta$ as the standard error of $\thetahat$ is $\sqrt{\theta(1-\theta) / n}$. (This is impossible as $\theta$ is unknown and hence why we did not yet cover the CI for the proportion).
+}}{~\spc{3}}
+
+
+
+\end{enumerate}
+
+
+\end{document}
