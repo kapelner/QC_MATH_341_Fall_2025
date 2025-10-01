@@ -125,14 +125,9 @@ X \sim \text{Gamma}(4, \theta) := \frac{\theta^{4}}{6} x^3 e^{-\theta x}\indic{x
 \iftoggle{solutions}{\inred{
 
 \beqn
-<<<<<<< HEAD
 \mathcal{L}(\theta; \X) &=& \prod_{i=1}^n \frac{\theta^{4}}{6} X_i^3 e^{-\theta X_i} \\
 &=& \frac{\theta^{4n}}{6^n} \parens{\prod_{i=1}^n X_i}^{3n} \exp{-\theta \displaystyle\sum_{i=1}^n X_i} \\
 \ell(\theta; \X) &=& 4n \natlog{\theta} - n \natlog{6} + 3n \sum_{i=1}^n \natlog{X_i} - \theta \displaystyle\sum_{i=1}^n X_i \\
-=======
-\mathcal{L}(\theta; \X) &=& \prod_{i=1}^n \frac{\theta^{4}}{6} X_i^3 e^{-\theta X_i} = \frac{\theta^{4n}}{6^n} X_i^{3n} \exp{-\theta \displaystyle\sum_{i=1}^n X_i} \\
-\ell(\theta; \X) &=& 4n \natlog{\theta} - n \natlog{6} - \theta \displaystyle\sum_{i=1}^n X_i \\
->>>>>>> 72041e746dff93887f9c29bb8c30ee2079992394
 \ell'(\theta; \X) &=& \frac{4n}{\theta} - \sum_{i=1}^n X_i ~~{\buildrel \text{set} \over =}~~ 0 \mathimplies \frac{4n}{\theta} = \sum_{i=1}^n X_i \mathimplies \thetahatmle = \frac{4n}{\sum_{i=1}^n X_i} = \frac{4}{\Xbar}
 \eeqn
 }}{~\spc{8}}
