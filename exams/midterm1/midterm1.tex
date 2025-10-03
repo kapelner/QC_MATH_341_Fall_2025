@@ -3,7 +3,7 @@
 \include{preamble}
 
 \newtoggle{solutions}
-%\toggletrue{solutions}
+\toggletrue{solutions}
 
 \title{Math 341 / 641 Fall \the\year{} \\ Midterm Examination One}
 \author{Professor Adam Kapelner}
@@ -82,7 +82,7 @@ $\xbar = 3.51$
 \iftoggle{solutions}{\inred{
 \beqn
 && \expe{X} = \muhat_1 = \frac{\theta_1}{\theta_2}, ~~\var{X} = \muhat_2 - \muhat_1^2 = \frac{\theta_1}{\theta_2^2} \\
-&& \mathimplies \theta_1 = \muhat_1 \theta_2 \mathimplies \muhat_2 - \muhat_1^2 = \frac{\muhat_1 \theta_2}{\theta_2^2} = \frac{\muhat_1}{\theta_2} \mathimplies \thetahatmm_2 = \frac{\muhat_1}{\muhat_2 - \muhat_1^2}
+&& \mathimplies \theta_1 = \muhat_1 \theta_2 \mathimplies \muhat_2 - \muhat_1^2 = \frac{\muhat_1 \theta_2}{\theta_2^2} = \frac{\muhat_1}{\theta_2} \mathimplies \thetahatmm_2 = \frac{\muhat_1}{\muhat_2 - \muhat_1^2} = \frac{\Xbar}{\hat{\sigma}_n}
 %\muhat_2 - \squared{\frac{\theta_1}{\theta_2}} = \frac{\theta_1}{\theta_2^2} \\
 \eeqn
 }}{~\spc{7}}
@@ -109,7 +109,7 @@ No, it is negative and the parameter space for $\theta_2$ is positive.
 We use intermediate results and our result found in (d)
 
 \beqn
-&& \theta_1 = \muhat_1 \theta_2, ~~~\thetahatmm_2 = \frac{\muhat_1}{\muhat_2 - \muhat_1^2} \mathimplies \thetahatmm_1 = \muhat_1 \parens{\frac{\muhat_1}{\muhat_2 - \muhat_1^2}} = \frac{\muhat_1^2}{\muhat_2 - \muhat_1^2}
+&& \theta_1 = \muhat_1 \theta_2, ~~~\thetahatmm_2 = \frac{\muhat_1}{\muhat_2 - \muhat_1^2} \mathimplies \thetahatmm_1 = \muhat_1 \parens{\frac{\muhat_1}{\muhat_2 - \muhat_1^2}} = \frac{\muhat_1^2}{\muhat_2 - \muhat_1^2}= \frac{\Xbar^2}{\hat{\sigma}_n}
 \eeqn
 }}{~\spc{6}}
 \pagebreak
