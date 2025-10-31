@@ -13,8 +13,8 @@ My lecture notes are scanned in as PDF files contributed by myself and are found
 Homeworks are to be emailed by the time indicated on the PDF to Bryan Nevarez, the TA at bnevarez@qc.cuny.edu. For the subject, write "Math [341, 641] HW #[number], [your full name]" where you fill in the brackets.
 
 <!-- * Homework 7 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf) (due 12/14)
-* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf) (due 11/27)
-* Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf) (due 11/15) -->
+* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf) (due 11/27) -->
+* Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf) (due 11/19)
 * Homework 4 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf) (due 11/4)
 * Homework 3 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf) (due 10/12)
 * Homework 2 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw02/hw02.pdf) (due 9/22)
