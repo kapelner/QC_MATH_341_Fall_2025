@@ -1,0 +1,556 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{solutions}
+%\toggletrue{solutions}
+
+\title{Math 341 / 641 Fall \the\year{} \\ Midterm Examination Two}
+\author{Professor Adam Kapelner}
+\date{November 18, \the\year{}}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.\\
+\\
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\~\\
+
+\begin{center}
+\line(1,0){350} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 110 minutes (variable time per question) and closed-book. You are allowed \textbf{two} pages (front and back) of a \qu{cheat sheet}, blank scrap paper (provided by the proctor) and a graphing calculator (which is not your smartphone). Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\problem Consider the following plot where the x-axis is $\theta$ and the y-axis is $\ell(\theta; \x)$. We wish to test $H_0: \theta = \theta_0$ at significance level $\alpha = 5\%$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{loglik.png}
+\end{figure}
+
+\begin{enumerate}[(a)]
+
+
+
+\subquestionwithpoints{2} Estimate $\thetahathatmle$ from the plot above.
+
+\iftoggle{solutions}{\inred{
+$\approx 0.3$
+}}{~\spc{-0.5}}
+
+
+\subquestionwithpoints{2} What is the name of the test we learned about that rejects $H_0$ if the distance between $\thetahathatmle$ and $\theta_0$ is large?
+
+\iftoggle{solutions}{\inred{
+Wald Test
+}}{~\spc{-0.5}}
+
+
+\subquestionwithpoints{2} What is the name of the test we learned about that rejects $H_0$ if the absolute value of the slope of the tangent line to $\ell(\theta_0; \x)$ is large?
+
+\iftoggle{solutions}{\inred{
+Score Test
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{2} What is the name of the test we learned about that rejects $H_0$ if the distance between $\ell(\theta_0; \x)$ and $\ell(\thetahathatmle; \x)$ is large?
+
+\iftoggle{solutions}{\inred{
+Likelihood Ratio Test
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{5} Test the null hypothesis when $\theta_0 = 0.8$.
+
+\iftoggle{solutions}{\inred{
+We only have enough information to run the Likelihood Ratio Test. We approximate $\ell(\thetahathatmle = 0.3; \x) = -5$ and  $\ell(\theta_0 = 0.8; \x) = -50$. Thus, $\doublehat{\Lambda} = 2((-5) - (-50)) = 90 > 3.84$, the cutoff for the $\chisq{1}$ distribution at $\alpha = 5\%$. Thus, we reject $H_0$.
+}}{~\spc{6}}
+\pagebreak
+
+\end{enumerate}
+
+
+\problem Consider the following rv and some of its properties:
+
+\beqn
+X \sim \text{Lomax}(\theta, 3) := \frac{\theta}{3}\tothepow{1 + \frac{x}{3}}{-(\theta+1)}\indic{x > 0},~~~\theta > 0,~~ \expe{X} = \frac{3}{\theta - 1}, ~~ \var{X} = \frac{9\theta}{(\theta-1)^2(\theta-2)}
+\eeqn
+
+Assume $\Xoneton \iid \text{Lomax}(\theta, 3)$ and that the following is correct:
+
+\beqn
+\mathcal{L}(\theta; \Xoneton) &=& \prod_{i=1}^n \frac{\theta}{3}\tothepow{1 + \frac{X_i}{3}}{-(\theta+1)} = \frac{\theta^n}{3^n} \tothepow{\prod_{i=1}^n \parens{1 + \frac{X_i}{3}}}{-(\theta+1)} \\
+\ell(\theta; \Xoneton) &=& n\natlog{\theta} - n\natlog{3} -(\theta+1) \sum_{i=1}^n \natlog{1 + \frac{X_i}{3}} \\
+\ell'(\theta; \Xoneton) &=& \frac{n}{\theta} - \sum_{i=1}^n \natlog{1 + \frac{X_i}{3}} \mathimplies \thetahatmle = \frac{n}{\sum_{i=1}^n \natlog{1 + \frac{X_i}{3}}}\\
+\ell''(\theta; \Xoneton) &=& - \frac{n}{\theta^2}
+\eeqn
+
+Then, assume we are testing $H_0: \theta = \theta_0$.
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} If we were to estimate $\var{X}$ from data, why do we employ Bessel's correction? 
+
+\iftoggle{solutions}{\inred{
+To have an unbiased estimator.
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{3} Find $\sqrt{I_n(\theta_0)}$. 
+
+\iftoggle{solutions}{\inred{
+\beqn
+I_n(\theta_0) = \expe{-\ell''(\theta_0; \Xoneton)} = \expe{-\parens{-\frac{n}{\theta_0^2}}} = \frac{n}{\theta_0^2} \mathimplies \sqrt{I_n(\theta_0)} = \frac{\sqrt{n}}{\theta_0}
+\eeqn
+}}{~\spc{2}}
+
+\subquestionwithpoints{4} Compute the asymptotically normal Wald statistic estimator $\hat{Z}~|~H_0$ (the test which comes directly from the monster theorem) as a function of $\Xoneton$, $n$ and $\theta_0$. Simplify.
+
+\iftoggle{solutions}{\inred{
+\beqn %\sqrt{I_n(\theta_0)} (\thetahatmle - \theta_0) =
+\hat{Z}~|~H_0 = \frac{\thetahatmle - \theta_0}{\oneover{\sqrt{I_n(\theta_0)}}} =  \frac{\sqrt{n}}{\theta_0} \parens{\frac{n}{\sum_{i=1}^n \natlog{1 + \frac{X_i}{3}}} - \theta_0}  = \frac{n^{3/2}}{\theta_0\sum_{i=1}^n \natlog{1 + \frac{X_i}{3}}} - \sqrt{n}
+\eeqn
+}}{~\spc{2}}
+\pagebreak
+
+\subquestionwithpoints{4} Compute the asymptotically normal score statistic estimator $\hat{Z}~|~H_0$ as a function of $\Xoneton$, $n$ and $\theta_0$. Simplify.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\hat{Z}~|~H_0 = \frac{s(\theta_0; \X)}{\sqrt{I_n(\theta)}} = \frac{\frac{n}{\theta_0} - \sum_{i=1}^n \natlog{1 + \frac{X_i}{3}}}{\frac{\sqrt{n}}{\theta_0}} = \sqrt{n} - \frac{\theta_0}{\sqrt{n}} \sum_{i=1}^n \natlog{1 + \frac{X_i}{3}}
+\eeqn
+}}{~\spc{4}}
+
+
+\subquestionwithpoints{4} Compute the asymptotically $\chisq{1}$ likelihood ratio statistic estimator $\hat{\Lambda}~|~H_0$ as a function of $\Xoneton$, $n$ and $\theta_0$. Simplify.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\hat{\Lambda}~|~H_0 &=& 2 \natlog{\frac{
+\mathcal{L}(\thetahatmle; \X)
+}{
+\mathcal{L}(\theta_0; \X)
+}} = 2 \natlog{\frac{
+\frac{(\thetahatmle)^n}{3^n} \tothepow{\prod_{i=1}^n \parens{1 + \frac{X_i}{3}}}{-(\thetahatmle+1)}
+}{
+\frac{\theta_0^n}{3^n} \tothepow{\prod_{i=1}^n \parens{1 + \frac{X_i}{3}}}{-(\theta_0+1)}
+}} \\
+&=& 2 \natlog{
+\tothepow{\frac{\thetahatmle}{\theta_0}}{n} \tothepow{\prod_{i=1}^n \parens{1 + \frac{X_i}{3}}}{(\theta_0+1) -(\thetahatmle+1)}
+}\\
+&=& 2 \parens{
+n \natlog{\thetahatmle} - n \natlog{\theta_0} + \parens{\theta_0 - \thetahatmle} \sum_{i=1}^n \natlog{1 + \frac{X_i}{3}}
+}
+\eeqn
+}}{~\spc{6}}
+
+For the rest of this question let $n=100$ and $\sum_{i=1}^n \natlog{1 + \frac{x_i}{3}} = 4.567$. We now wish to test $H_0: \theta = 17$ at significance level $\alpha = 5\%$.
+
+\subquestionwithpoints{3} Compute the Wald statistic estimate to four decimal places. Then write the result of the hypothesis test decision.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\doublehat{z} = \frac{100^{3/2}}{17 \cdot 4.567} - \sqrt{100} = 2.880 \notin \bracks{\pm 1.96} \mathimplies \text{Reject}~H_0
+\eeqn
+}}{~\spc{2}}
+\pagebreak
+
+\subquestionwithpoints{3} Compute the score statistic estimate to four decimal places. Then write the result of the hypothesis test decision.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\doublehat{z} = \sqrt{100} - \frac{17}{\sqrt{100}} \cdot 4.567 = 2.2361 \notin \bracks{\pm 1.96} \mathimplies \text{Reject}~H_0
+\eeqn
+}}{~\spc{3}}
+
+\subquestionwithpoints{3} Compute the likelihood ratio statistic estimate to four decimal places. Then write the result of the hypothesis test decision.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\thetahathatmle &=& 100 / 4.567 =  21.89621 \\
+\doublehat{\Lambda} &=& 2\parens{
+100 \natlog{21.89621} - 100 \natlog{17} + (17 - 21.89621) \cdot 4.567
+} \\
+&=& 5.8981 \notin \bracks{0, 3.84} \mathimplies \text{Reject}~H_0
+\eeqn
+}}{~\spc{3}}
+
+\subquestionwithpoints{2} Is it guaranteed that the outcomes of this hypothesis test would be the same for all three of these tests above? Yes/no.
+
+\iftoggle{solutions}{\inred{
+No
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{2} Given the information you have, is it possible to determine which test has the highest power? Yes/no.
+
+\iftoggle{solutions}{\inred{
+No
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{2} Which of these three tests were approximate?
+
+\iftoggle{solutions}{\inred{
+all of them
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{4} Compute a 95\% confidence interval for $\theta$ to two decimals and denote it properly.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\doublehat{CI}_{\theta, 95\%} &\approx& \bracks{\thetahathatmle \pm 1.96 \oneoversqrt{I_n(\thetahathatmle)}} = \bracks{\thetahathatmle \pm 1.96 \frac{\thetahathatmle}{\sqrt{n}}} = \bracks{21.89621 \pm 1.96 \frac{21.89621}{\sqrt{100}}} \\
+&=& \bracks{17.61, 26.19}
+\eeqn
+}}{~\spc{5}}
+\pagebreak
+
+\subquestionwithpoints{3} Provide three interpretations of this interval.
+
+\iftoggle{solutions}{\inred{
+\begin{itemize}
+    \item Before you collect data, the probability $\hat{CI}_{\theta, 95\%}$ will contain $\theta$ is $\approx 95\%$.
+    \item If you collect many different datasets and compute a confidence interval for each dataset, $\approx 95\%$ of $\doublehat{CI}_{\theta, 95\%}$'s will contain $\theta$.
+    \item The probability that $\theta$ is in the computed $\doublehat{CI}_{\theta, 95\%}$ is either zero or one.
+\end{itemize}
+}}{~\spc{4}}
+
+
+\subquestionwithpoints{5} Compute a 95\% confidence interval for $\phi := g(\theta) = \natlog{\theta}$ to two decimals and denote it properly.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\doublehat{CI}_{\phi, 95\%} &\approx& \bracks{g(\thetahathatmle) \pm 1.96 |g'(\thetahathatmle)|\hat{\text{SE}}(\thetahathatmle)} = \bracks{\natlog{\thetahathatmle} \pm 1.96 \oneover{\abss{\thetahathatmle}}\frac{\thetahathatmle}{\sqrt{n}}} \\
+&=& \bracks{\natlog{21.89621} \pm 1.96\frac{1}{\sqrt{100}}} = \bracks{2.89, 3.28}
+\eeqn
+}}{~\spc{5}}
+
+\end{enumerate}
+
+
+\problem In a standard double-slit interference experiment, electrons are fired one at a time toward a pair of slits separated by distance $d$. The detection screen is at distance $L$, and the position $X$ of each detected electron (measured in cm from the center line) follows a probability density function proportional to
+
+\beqn
+I(x) = I_0 \text{cos}^2\parens{\frac{\pi d\, x}{\lambda L}},
+\eeqn
+
+\noindent where $\lambda$ is the de Broglie wavelength, $d$ is slit separation, and $L$ is slit-to-screen distance.
+
+For our particular setting of $d,L$, the system is calibrated so that the theoretical probability density for the impact location $x$ in the interval $(-1,1)$ is
+
+\beqn
+f(x) = \frac12 \parens{1 + \cos{3\pi x}}
+\eeqn
+
+\noindent and the CDF on the interval $(-1,1)$ can then be found by calculus to be:
+
+\beqn
+F(x) = \half\parens{1 + x + \frac{\sin{3\pi x}}{3\pi}}.
+\eeqn
+\pagebreak
+
+\noindent The experimenter collects $n = 20$ independent electron impact position observations which we denote $\xoneton$ and then computes their theoretical CDF values and the difference with the estimated CDF values. Below are these values sorted by the value of $x$:
+
+
+\[
+\begin{array}{c|c|c|c}
+i & x_{i} & F(x_{i}) & |F(x_{i}) - \doublehat{F}(x_{i})| \\ \hline
+1 & -0.96 & 0.038 & 0.012 \\
+2 & -0.77 & 0.128 & 0.022 \\
+3 & -0.74 & 0.143 & 0.007 \\
+4 & -0.60 & 0.204 & 0.004 \\
+5 & -0.51 & 0.248 & 0.002 \\
+6 & -0.40 & 0.304 & 0.004 \\
+7 & -0.32 & 0.343 & 0.007 \\
+8 & -0.19 & 0.401 & 0.001 \\
+9 & -0.10 & 0.445 & 0.005 \\
+10 & -0.04 & 0.474 & 0.006 \\
+11 & 0.02 & 0.505 & 0.005 \\
+12 & 0.11 & 0.549 & 0.001 \\
+13 & 0.17 & 0.580 & 0.010 \\
+14 & 0.24 & 0.613 & 0.013 \\
+15 & 0.36 & 0.665 & 0.011 \\
+16 & 0.48 & 0.715 & 0.015 \\
+17 & 0.55 & 0.744 & 0.016 \\
+18 & 0.63 & 0.775 & 0.005 \\
+19 & 0.79 & 0.830 & 0.030 \\
+20 & 0.92 & 0.873 & 0.027 \\
+\end{array}
+\]
+\begin{enumerate}[(a)]
+
+
+\subquestionwithpoints{2} Find a formula for $\doublehat{F}_i := \doublehat{F}(x_i)$ given that the $x_i$'s are sorted smallest to largest.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\doublehat{F}_i = \frac{i}{n} = \frac{i}{20}
+\eeqn
+}}{~\spc{1}}
+
+Henceforth, our goal is to test whether these observations match the theoretical double-slit density derived from physics.
+
+\subquestionwithpoints{2} What is the null hypothesis $H_0$?
+
+\iftoggle{solutions}{\inred{
+\beqn
+H_0: \Xoneton \iid f(x)
+\eeqn
+}}{~\spc{1}}
+\subquestionwithpoints{2} What is the alternative hypothesis $H_a$?
+
+\iftoggle{solutions}{\inred{
+\beqn
+H_0: \Xoneton ~\text{are not distributed} \iid f(x)
+\eeqn
+}}{~\spc{1}}
+\pagebreak
+
+\subquestionwithpoints{5} Test $H_a$ from the previous question at $\alpha = 0.05$. Indicate the decision. Interpret the decision.
+
+\iftoggle{solutions}{\inred{
+We use the one-sample Kolmogorov-Smirnov test. At $\alpha = 0.05$, the critical value of the Kolmogorov distribution is 1.359. From the table above, we find the supremum difference between theoretical CDF and empirical CDF to be $\doublehat{D}_n = 0.03$. We then calculate the test statistic using the formula below.
+
+\beqn
+\doublehat{K} = \sqrt{n} \doublehat{D}_n = \sqrt{20} \cdot 0.03 = 0.134 \in \bracks{0, 1.359} \mathimplies \text{Retain}~H_0
+\eeqn
+
+There is insufficient evidence to suggest that these observed electron impact positions are not distributed according to the theoretical impact location in the double-slit experiment.
+}}{~\spc{4}}
+
+\subquestionwithpoints{1} Is the test in the previous question exact or approximate?
+
+\iftoggle{solutions}{\inred{
+approximate
+}}{~\spc{-0.5}}
+
+\end{enumerate}
+
+\problem A researcher wants to know whether daily exercise frequency is associated with (dependent on) a person’s stress level. A random sample of 240 adults is surveyed, and the results are summarized in the table below.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l||l|l|l||l}
+\hline
+\textbf{Stress Level $\rightarrow$} &  &  & &  \\
+\textbf{Exercise Frequency $\downarrow$} & \textbf{Low} & \textbf{Medium} & \textbf{High} & \textbf{Total} \\
+\hline \hline
+None             & 18 & 42 & 30 & 90 \\
+&&&&   \\\hline
+1--2 days/week   & 32 & 48 & 20 & 100  \\
+&&&&\\\hline
+3--5 days/week   & 28 & 16 & 6  & 50 \\
+&&&&\\
+\hline \hline
+\textbf{Total}   & 78 & 106 & 56 & 240 \\&&&&
+\end{tabular}
+\end{table}
+
+Let $\theta_{i,j}$ denote the joint probability of having exercise frequency of row $i$ and stress level of column $j$. Let $\theta_{i \cdot}$ denote the marginal probability of having exercise frequency of row $i$. Let $\theta_{\cdot j}$ denote the marginal probability of having stress level of column $j$. 
+
+
+Below are some 95\%iles of chi-squared distributions by degrees of freedom.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccccccccccc}
+$d$ degrees of freedom &       1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$x ~s.t.~ F_{\chi^2_d}(x) = .95$ & 3.84 & 5.99 & 7.81 & 9.49 & 11.07 & 12.59 & 14.07 & 15.51 & 16.92 & 18.31
+\end{tabular}
+\end{table}
+
+Using the $\theta$ notation above, the null and alternative hypotheses are
+
+\beqn
+&& H_a: \exists i,j~~\theta_{i,j} \neq \theta_{i \cdot} \theta_{\cdot j} \\
+&& H_0: \forall i,j~~\theta_{i,j} =      \theta_{i \cdot} \theta_{\cdot j}
+\eeqn
+\pagebreak
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{7} Run the test for $H_a$ from part (a) at $\alpha = 5\%$. Indicate the decision. Interpret the decision.
+
+
+\iftoggle{solutions}{\inred{
+We compute the marginal probabilities of each row and column under $H_0$ (in the margins to three decimal places). Then in the cells, we multiply these row and column marginal probabilities times $n$ to get the expected counts (to two decimal places):
+
+
+
+\arrayrulecolor{red}
+\begin{table}[h]
+\centering
+\begingroup
+\color{red}
+\begin{tabular}{l||l|l|l||l}
+\textbf{Exercise} & \textbf{Low} & \textbf{Medium} & \textbf{High} &  \\
+\textbf{Frequency} & \textbf{Stress} & \textbf{Stress} & \textbf{Stress} & \textbf{Marginal Proportion} \\
+\hline \hline
+None             & 29.25 & 39.78 & 20.07 & .375\\
+&&&&   \\\hline
+1--2 days/week   & 32.53 & 44.23 & 22.32 & .417\\
+&&&&\\\hline
+3--5 days/week   & 16.22 & 22.06 & 11.13  & .208 \\
+&&&&\\
+\hline \hline
+\textbf{Marginal Proportion}   & .325 & .442 & .233 & 240 \\&&&&
+\end{tabular}
+\endgroup
+\end{table}
+\arrayrulecolor{black}
+\FloatBarrier
+
+The chi-squared test statistic has $(r-1)(c-1) = (3-1)(3-1)=4$ degrees of freedom. Hence the cutoff at $\alpha = 5\%$ is given in the table in the problem header as 9.49.
+Now we compute the chi-squared test statistic:
+
+\beqn
+\doublehat{\phi} &=& 
+\frac{\squared{18 - 29.25}}{29.25} + \frac{\squared{42 - 39.78}}{39.78} + \frac{\squared{30 - 20.07}}{20.07} + \\
+&& \frac{\squared{32 - 32.53}}{32.53} + \frac{\squared{48 - 44.23}}{44.23} + \frac{\squared{20 - 22.32}}{22.32} + \\
+&&\frac{\squared{28 - 16.22}}{16.22} + \frac{\squared{16 - 22.06}}{22.06} + \frac{\squared{6 - 11.13}}{11.13} \approx 22 \notin [0, 9.49] \mathimplies \text{Reject}~H_0
+\eeqn
+
+There is sufficient evidence to suggest that exercise level and stress are dependent.
+}}{~\spc{18.5}}
+
+
+\subquestionwithpoints{1} Is the test in the previous question exact or approximate?
+
+\iftoggle{solutions}{\inred{
+approximate
+}}{~\spc{0.5}}
+
+\end{enumerate}
+\pagebreak
+
+
+
+\problem You observe the following dataset from measurements on a metallurgic fabrication device:
+
+\begin{verbatim}
+                            1.59  0.92  0.30  1.45 -0.55  
+                            0.46 -0.73  0.01  1.48  1.07
+\end{verbatim}  
+
+
+\noindent And we compute $\xbar = 0.600$ and $s = 0.840$. It is important to prove $H_a: \theta > 0$ where $\theta$ is the expectation of the DGP.
+
+Below are some 95\%iles of Student's T distributions by degrees of freedom.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccccccccccc}
+$d$ degrees of freedom &       1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$t ~s.t.~ F_{T_d}(t) = .95$ & 6.31 &2.92& 2.35& 2.13& 2.02& 1.94& 1.89& 1.86& 1.83& 1.81
+\end{tabular}
+\end{table}
+
+
+\begin{enumerate}[(a)]
+
+
+\subquestionwithpoints{4} Assuming the DGP is normal, run the appropriate test based on what is important to prove about $\theta$ at $\alpha = 5\%$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+H_0: \theta \leq 0, ~~\doublehat{t} = \frac{\xbar - \theta_0}{\frac{s}{\sqrt{n}}} = \frac{0.6 - 0}{\frac{0.840}{\sqrt{10}}} = 2.259 \notin (-\infty, 1.83] \mathimplies \text{Reject} ~ H_0
+\eeqn
+}}{~\spc{5}}
+
+
+\subquestionwithpoints{2} Create an expression for the $p_{val}$ using the CDF function $F_{T_d}(t)$ where you specify the values of $d$ and $t$ numerically and compare it to $\alpha$ using either $>,<,=$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+p_{val} = 1 - F_{T_9}(2.259) < \alpha
+\eeqn
+}}{~\spc{3}}
+
+\subquestionwithpoints{1} Is the test in (a) exact or approximate?
+
+\iftoggle{solutions}{\inred{
+exact
+}}{~\spc{0.5}}
+\pagebreak
+
+\subquestionwithpoints{4} Assuming the DGP is \textit{not} normal, run the appropriate test based on what is important to prove about $\theta$ at $\alpha = 5\%$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+H_0: \theta \leq 0, ~~\doublehat{z} = \frac{\xbar - \theta_0}{\frac{s}{\sqrt{n}}} = \frac{0.6 - 0}{\frac{0.840}{\sqrt{10}}} = 2.259 \notin (-\infty, 1.96] \mathimplies \text{Reject} ~ H_0
+\eeqn
+}}{~\spc{5}}
+
+
+\subquestionwithpoints{2} Create an expression for the $p_{val}$ based on notation we used in class and compare it to $\alpha$ using either $>,<,=$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+p_{val} = 1 - \Phi(2.259) < \alpha
+\eeqn
+}}{~\spc{4}}
+
+\subquestionwithpoints{1} Is the test in (d) exact or approximate?
+
+\iftoggle{solutions}{\inred{
+approximate
+}}{~\spc{0.5}}
+
+You now observe the following dataset from measurements on a second metallurgic fabrication device:
+
+\begin{verbatim}
+                            0.68  2.51  1.35  1.81  0.44  
+                            2.69  1.97  1.36  0.85 -1.35
+\end{verbatim}  
+
+And we compute $\xbar = 1.231$ and $s = 1.174$. We wish to test $H_0: \theta_1 = \theta_2$ where $\theta_1$ is the mean of the first metallurgic fabrication device and $\theta_2$ is the mean of the second metallurgic fabrication device.
+\pagebreak
+
+\subquestionwithpoints{2}  Assuming the DGP of the first device and the DGP of the second device are both normal with different variances, what is the exact distribution of the test statistic used to test $H_0$? Specify the numeric value(s) of this distribution or discuss how they are computed.
+
+\iftoggle{solutions}{\inred{
+The test statistic is exactly Fisher-Behrens-distributed.
+}}{~\spc{2}}
+
+\subquestionwithpoints{2}  Assuming the DGP of the first device and the DGP of the second device are both normal with different variances, what is the approximate distribution of the test statistic used to test $H_0$? This approximate distribution is the most popoular means of testing this null hypothesis. Specify the numeric value(s) of this distribution or discuss how they are computed.
+
+\iftoggle{solutions}{\inred{
+The test statistic is approximately $T_d$-distributed with $d$ equal to the Welch-Satterthwaite formula.
+}}{~\spc{2}}
+
+\subquestionwithpoints{2}  Assuming the DGP of the first device and the DGP of the second device are both normal with equal variances, what is the exact distribution of the test statistic used to test $H_0$? Specify the numeric value(s) of this distribution or discuss how they are computed.
+
+\iftoggle{solutions}{\inred{
+the test statistic is exactly $T_{18}$-distributed.
+}}{~\spc{2}}
+
+\subquestionwithpoints{2}  Assuming the DGP of the first device and the DGP of the second device are both \text{non}-normal with equal variances, what is the approximate distribution of the test statistic used to test $H_0$? Specify the numeric value(s) of this distribution or discuss how they are computed.
+
+\iftoggle{solutions}{\inred{
+The test statistic is approximately $Z$- or standard normal-distributed.
+}}{~\spc{2}}
+
+\end{enumerate}
+
+
+
+
+% \problem iid bernoulli bayes with two theteas
+
+% \problem multiple hypothesis testing
+
+
+\end{document}
