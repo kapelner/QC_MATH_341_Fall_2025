@@ -314,7 +314,7 @@ H_0: \Xoneton \iid f(x)
 
 \iftoggle{solutions}{\inred{
 \beqn
-H_0: \Xoneton ~\text{are not distributed} \iid f(x)
+H_a: \Xoneton ~\text{are not distributed} \iid f(x)
 \eeqn
 }}{~\spc{1}}
 \pagebreak
@@ -329,6 +329,9 @@ We use the one-sample Kolmogorov-Smirnov test. At $\alpha = 0.05$, the critical 
 \eeqn
 
 There is insufficient evidence to suggest that these observed electron impact positions are not distributed according to the theoretical impact location in the double-slit experiment.
+
+In class we discussed that the Kolmogorov-Smirnov test should not be used at $n=20$. If this was explained than \qu{there is no way to test $H_a$} is also an acceptable answer.
+
 }}{~\spc{4}}
 
 \subquestionwithpoints{1} Is the test in the previous question exact or approximate?
@@ -490,7 +493,7 @@ exact
 
 \iftoggle{solutions}{\inred{
 \beqn
-H_0: \theta \leq 0, ~~\doublehat{z} = \frac{\xbar - \theta_0}{\frac{s}{\sqrt{n}}} = \frac{0.6 - 0}{\frac{0.840}{\sqrt{10}}} = 2.259 \notin (-\infty, 1.96] \mathimplies \text{Reject} ~ H_0
+H_0: \theta \leq 0, ~~\doublehat{z} = \frac{\xbar - \theta_0}{\frac{s}{\sqrt{n}}} = \frac{0.6 - 0}{\frac{0.840}{\sqrt{10}}} = 2.259 \notin (-\infty, 1.645] \mathimplies \text{Reject} ~ H_0
 \eeqn
 }}{~\spc{5}}
 
@@ -522,7 +525,7 @@ And we compute $\xbar = 1.231$ and $s = 1.174$. We wish to test $H_0: \theta_1 =
 \subquestionwithpoints{2}  Assuming the DGP of the first device and the DGP of the second device are both normal with different variances, what is the exact distribution of the test statistic used to test $H_0$? Specify the numeric value(s) of this distribution or discuss how they are computed.
 
 \iftoggle{solutions}{\inred{
-The test statistic is exactly Fisher-Behrens-distributed.
+The test statistic is exactly Fisher-Behrens-distributed. We didn't go over its parameters in class thus they're omitted.
 }}{~\spc{2}}
 
 \subquestionwithpoints{2}  Assuming the DGP of the first device and the DGP of the second device are both normal with different variances, what is the approximate distribution of the test statistic used to test $H_0$? This approximate distribution is the most popoular means of testing this null hypothesis. Specify the numeric value(s) of this distribution or discuss how they are computed.
