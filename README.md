@@ -12,8 +12,9 @@ My lecture notes are scanned in as PDF files contributed by myself and are found
 
 Homeworks are to be emailed by the time indicated on the PDF to Bryan Nevarez, the TA at bnevarez@qc.cuny.edu. For the subject, write "Math [341, 641] HW #[number], [your full name]" where you fill in the brackets.
 
-<!-- * Homework 7 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf) (due 12/14)
-* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf) (due 11/27) -->
+<!-- --> 
+* Homework 7 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw07/hw07.pdf) (due 12/15)
+* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw06/hw06.pdf) (due 12/3)
 * Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw05/hw05.pdf) (due 11/19)
 * Homework 4 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw04/hw04.pdf) (due 11/4)
 * Homework 3 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/homeworks/hw03/hw03.pdf) (due 10/12)
@@ -25,7 +26,7 @@ Homeworks are to be emailed by the time indicated on the PDF to Bryan Nevarez, t
 
 * Midterm I, Tues, Sept 30 [(exam)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/exams/midterm1/midterm1_solutions.pdf)
 * Midterm II, Tues, Nov 18 [(exam)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/exams/midterm2/midterm2.pdf) [(solutions)](https://github.com/kapelner/QC_MATH_341_Fall_2025/blob/main/exams/midterm2/midterm2_solutions.pdf) 
-* Final, TBA
+* Final, Tues, Dec 16 6:15-8:15PM KY 258
 
 ## Practice Exams
 
