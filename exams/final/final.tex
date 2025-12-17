@@ -1,0 +1,347 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{solutions}
+%\toggletrue{solutions}
+
+\title{Math 341 / 641 Fall \the\year{} \\ Final Examination \iftoggle{solutions}{\inred{Solutions}}}
+\author{Professor Adam Kapelner}
+\date{December 16, \the\year{}}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.\\
+\\
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\~\\
+
+\begin{center}
+\line(1,0){350} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 120 minutes (variable time per question) and closed-book. You are allowed \textbf{three} pages (front and back) of a \qu{cheat sheet}, blank scrap paper (provided by the proctor) and a graphing calculator (which is not your smartphone). Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\problem Consider the iid Poisson DGP where instead of being parameterized by the usual $\lambda > 0$, we parameterize it by $\theta = g(\lambda) = \natlog{\lambda}$ so that $\lambda = e^{\theta}$ hence,
+
+\beqn
+\Xoneton \iid \poisson{\theta} := \frac{e^{-e^{\theta}} \tothepow{e^{\theta}}{x}}{x!}\indic{x \in \naturals_0}.
+\eeqn
+
+\begin{enumerate}[label=(\alphalph{\arabic*})]
+
+
+
+\subquestionwithpoints{2} What is $\Theta$?
+
+\iftoggle{solutions}{\inred{
+\beqn
+\lambda \in (0,\infty) \mathimplies \natlog{\lambda} = \theta \in \reals = \Theta
+\eeqn
+}}{~\spc{1}}
+
+
+\subquestionwithpoints{4} Show the following and justify each step: 
+
+\beqn
+\mathcal{L}(\theta; \X) = e^{-ne^{\theta}} e^{n\Xbar\theta} \prod_{i=1}^n \frac{\indic{X_i \in \naturals_0}}{X_i!}
+\eeqn
+
+\iftoggle{solutions}{\inred{
+\beqn
+\mathcal{L}(\theta; \X) = \prod_{i=1}^n \frac{e^{-e^{\theta}} \tothepow{e^{\theta}}{X_i}}{X_i!}\indic{X_i \in \naturals_0} = e^{-ne^{\theta}} \tothepow{e^{\theta}}{\sum_{i=1}^n X_i} \prod_{i=1}^n \frac{\indic{X_i \in \naturals_0}}{X_i!} = e^{-ne^{\theta}} e^{n\Xbar\theta} \prod_{i=1}^n \frac{\indic{X_i \in \naturals_0}}{X_i!}
+\eeqn
+}}{~\spc{6}}
+
+
+\subquestionwithpoints{3} Find $\ell(\theta; \X)$. 
+
+\iftoggle{solutions}{\inred{
+\beqn
+\ell(\theta; \X) =  -ne^\theta + n\Xbar \theta + \sum_{i=1}^n \natlog{\frac{\indic{X_i \in \naturals_0}}{X_i!}}
+\eeqn
+}}{~\spc{4}}
+\pagebreak
+
+\subquestionwithpoints{2} Find $\ell'(\theta; \X)$. 
+
+\iftoggle{solutions}{\inred{
+\beqn
+\ell'(\theta; \X) = -ne^\theta + n\Xbar
+\eeqn
+}}{~\spc{1}}
+
+\subquestionwithpoints{4} Find $\thetahatmle$. Simplify.
+
+\iftoggle{solutions}{\inred{
+\beqn
+\ell'(\theta; \X) \setequals 0 \mathimplies -ne^\theta + n\Xbar = 0 \mathimplies e^\theta = \Xbar \mathimplies \thetahathatmle = \natlog{\Xbar}
+\eeqn
+}}{~\spc{3}}
+
+\subquestionwithpoints{2} Find $I_n(\theta)$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+I_n(\theta) = \expe{-\ell''(\theta; \X)} = \expe{-\parens{-ne^\theta}} = ne^\theta
+\eeqn
+}}{~\spc{2}}
+
+
+\subquestionwithpoints{2} Find $I(\theta)$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+I_n(\theta) = nI(\theta) \mathimplies ne^\theta = nI(\theta) \mathimplies I(\theta) = e^\theta
+\eeqn
+}}{~\spc{3}}
+
+\subquestionwithpoints{3} Given your answer in (a), what is the Laplace prior on $\theta$?
+
+\iftoggle{solutions}{\inred{
+Since the parameter space is all $\reals$, $f(\theta) \propto 1$.
+}}{~\spc{2}}
+
+\subquestionwithpoints{1} Is Laplace's prior proper? Yes / no.
+
+\iftoggle{solutions}{\inred{
+No
+}}{~\spc{-0.5}}
+\pagebreak
+
+
+\subquestionwithpoints{3} Show that the kernel of Jeffrey's prior on $\theta$ is $e^{\theta / 2}$.
+
+\iftoggle{solutions}{\inred{
+\beqn
+f(\theta) \propto \sqrt{I(\theta)} = \sqrt{e^\theta} = \tothepow{e^\theta}{\half} = e^{\theta / 2}
+\eeqn
+}}{~\spc{2}}
+
+\subquestionwithpoints{3} Is Jeffrey's prior proper? Yes / no and justify your answer.
+
+\iftoggle{solutions}{\inred{
+No, because $\int_\Theta e^{\theta / 2} d\theta = \infty$ and thus Humpty Dumpty cannot be satisfied.
+}}{~\spc{1}}
+
+
+For the rest of this question, you will need to know about the following new rv:
+
+\beqn
+Y \sim \text{LogGamma}(a,b) := \frac{b^a}{\Gamma(a)} e^{ay-be^{y} },~a,b>0,~\expe{Y} = \psi(a) - \natlog{b}, ~ \text{Mode}[Y] = \natlog{\frac{a}{b}}
+\eeqn
+
+where $\psi$ is called the \qu{digamma} function.
+
+\subquestionwithpoints{6} Using Laplace's prior, derive the posterior. If you did not figure out Laplace's prior, let $f(\theta) \propto 1$ going forward. Show the posterior is a LogGamma distribution and find the posterior parameters.
+
+\iftoggle{solutions}{\inred{
+\beqn
+f(\theta~|~\x) &=& \frac{f(\x~|~\theta)f(\theta)}{f(\x)} \propto f(\x~|~\theta)f(\theta) \propto  \mathcal{L}(\theta; \x) =   \frac{e^{-ne^{\theta}} \tothepow{e^{\theta}}{\sum_{i=1}^n x_i}}{\prod_{i=1}^n x_i!} \prod_{i=1}^n\indic{x_i \in \naturals_0} \\
+&\propto& e^{-ne^{\theta}} \tothepow{e^{\theta}}{\sum_{i=1}^n x_i} \\
+&=& e^{n\xbar \theta - n e^{\theta} } \\
+&\propto& \text{LogGamma}(n\xbar, n)
+\eeqn
+}}{~\spc{6}}
+\pagebreak
+
+
+\subquestionwithpoints{3} Is this posterior always proper? Yes / no and justify your answer.
+
+\iftoggle{solutions}{\inred{
+No. If $\xbar = 0$ (which is possible for a Poisson rv), then $b=0$ and the posterior is improper.
+}}{~\spc{1}}
+
+\subquestionwithpoints{2} Write Jeffrey's prior as a LogGamma (whether proper or improper).
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+e^{\theta / 2} \propto \text{LogGamma}(1/2, 0)
+\eeqn
+}}{~\spc{1}}
+
+\subquestionwithpoints{6} Now let $f(\theta) = \text{LogGamma}(a,b)$, the general rv where $a,b >0$, and rederive the posterior.
+
+\iftoggle{solutions}{\inred{
+Note $f(\theta) \propto e^{a\theta -be^{\theta}}$. We can now piggyback from part (l) and start here:
+
+\beqn
+f(\theta~|~\x) &\propto& e^{n\xbar \theta - n e^{\theta} } f(\theta) \\
+&\propto& e^{n\xbar \theta - n e^{\theta}  }  \parens{e^{a\theta -be^{\theta}  }} \\
+&=& e^{ (n\xbar + a) \theta - (n + b) e^{\theta} } \\
+&\propto& \text{LogGamma}(n\xbar + a,n + b)
+\eeqn
+}}{~\spc{10}}
+
+\subquestionwithpoints{3} Is the LogGamma the conjugate prior for the iid Poisson with our parameterization of $\theta = \natlog{\lambda}$? Yes / no and justify your answer.
+
+\iftoggle{solutions}{\inred{
+Yes. The prior is LogGamma and the posterior is LogGamma hence we satisfied the definition of conjugacy.
+}}{~\spc{2}}
+
+\pagebreak
+
+
+\subquestionwithpoints{3} Interpret the likely significance of the hyperparemeter $b$ in the context of the pseudoobservations.
+
+\iftoggle{solutions}{\inred{
+Given that it adds to $n$, we can surmise that $b = n_0$, the number of pseudoobservations.
+}}{~\spc{3}}
+
+
+\subquestionwithpoints{4} Interpret the likely significance of the hyperparemeter $a$ in the context of the pseudoobservations.
+
+
+\iftoggle{solutions}{\inred{
+Given that it adds to $n\xbar = \sum_{i=1}^n x_i$, we can surmise that $a = n_0 \mu_0$, where $\mu_0$ is the average of the $n_0$ pseudoobservations. Or alternatively, $a$ is the sum of the $n_0$ pseudoobservations which in the context of the Poisson DGP is the number of pseudosuccesses.
+}}{~\spc{3}}
+
+\subquestionwithpoints{1} Are the interpretations of $a,b$ the same as the interpretation of $\alpha, \beta$ in the $\gammanot{\alpha}{\beta}$ prior when we parameterize the Poisson with $\lambda$, the canonical parameterization we used in class? Yes / no.
+
+
+\iftoggle{solutions}{\inred{
+Yes.
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{3} Is Haldane's prior the same as Laplace's prior in this model? Yes / no and justify your answer.
+
+
+\iftoggle{solutions}{\inred{
+Yes. Haldane's prior is setting $n_0 = 0$. When doing so, we get the same posterior as Laplace's prior, therefore the prior must be identical.
+}}{~\spc{3}}
+
+\subquestionwithpoints{4} Consider the setting with a sample size of 17 observations. Provide an example of an informative conjugate prior.
+
+\iftoggle{solutions}{\inred{
+All we need to do is let $n_0 >> 17$ and $\mu_0$ doesn't matter. So the following qualifies: LogGamma($\cdot, 1000$).
+}}{~\spc{2}}
+\pagebreak
+
+For the remainder of this problem, let 
+
+\beqn
+f(\theta~|~\x) = \text{LogGamma}(n\xbar + n_0\mu_0, n + n_0)
+\eeqn
+
+where we have hyperparameters $n_0 \geq 0, \mu_0 \geq 0$.
+
+\subquestionwithpoints{2} Find $\thetahathatmmse$ explicitly as a function of $n, \xbar,n_0, \mu_0$ or write a mathematical expression that will compute it.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+\thetahathatmmse := \expe{\theta~|~\x} = \psi(n\xbar + n_0\mu_0) - \natlog{n + n_0}
+\eeqn
+}}{~\spc{4}}
+
+\subquestionwithpoints{4} Find $\thetahathatmmae$ explicitly as a function of $n, \xbar,n_0, \mu_0$ or write a mathematical expression that will compute it.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+\thetahathatmmae := \text{Med}\bracks{\theta~|~\x} = \braces{\theta : \int_{-\infty}^\theta \frac{(n + n_0)^{n\xbar + n_0\mu_0}}{\Gamma(n\xbar + n_0\mu_0)} e^{(n\xbar + n_0\mu_0)u-(n + n_0)e^{u} } du = 0.5}
+\eeqn
+}}{~\spc{4}}
+
+\subquestionwithpoints{2} Find $\thetahathatmap$ explicitly as a function of $n, \xbar,n_0, \mu_0$.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+\thetahathatmap := \text{Mode}\bracks{\theta~|~\x}  = \natlog{\frac{n\xbar + n_0\mu_0}{n + n_0}}
+\eeqn
+}}{~\spc{4}}
+\pagebreak
+
+For the remainder of this problem, let \texttt{qlgamma}($q$, $a$, $b$) be the function that returns the $q$th quantile of the rv \text{LogGamma}($a$, $b$) and \texttt{plgamma}($x$, $a$, $b$) be the CDF $F(x)$ of the rv \text{LogGamma}($a$, $b$).
+
+
+\subquestionwithpoints{5} Write an expression that will return a 95\% credible region for $\theta$ after seeing the data $\x$.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+CR_{\theta, 95\%} = \bracks{\texttt{qlgamma}\parens{.025, n\xbar + n_0\mu_0, n + n_0}, \texttt{qlgamma}\parens{.975, n\xbar + n_0\mu_0, n + n_0}}
+\eeqn
+}}{~\spc{1}}
+
+
+\subquestionwithpoints{7} Note: we are switching to Frequentist inference for this one question. Find an approximate 95\% confidence interval for $\theta$ after seeing the data $\x$. You will need to use the fact that if $Y \sim \poisson{\lambda}$ then $\var{Y} = \lambda$.
+
+
+\iftoggle{solutions}{\inred{
+For this we need the delta method. In a previous question we found that $\thetahathatmle = \natlog{\xbar}$. We have $\theta = g(\lambda) = \natlog{\lambda}$ and thus $g'(\lambda) = \lambda^{-1}$. You either have proved or can prove quickly that $\doublehat{\lambda}^{MLE} = \xbar$. Hence $\sd{\hat{\lambda}^{MLE}} = \frac{\sigsq}{n} = \frac{\lambda}{n}$ and thus $\doublehat{\mathbb{S}\text{D}}\bracks{\hat{\lambda}^{MLE}} = \frac{\xbar}{n}$. We now have everything we need for the formula:
+
+\beqn
+CI_{\theta, 95\%} \approx \bracks{\thetahathatmle \pm 1.96\, g'\parens{\doublehat{\lambda}^{MLE}} \doublehat{\mathbb{S}\text{D}}\bracks{\hat{\lambda}^{MLE}}} = \bracks{\natlog{\xbar} \pm 1.96 \parens{\oneover{\xbar}} \parens{\frac{\xbar}{n}}} = \bracks{\natlog{\xbar} \pm  \frac{1.96}{n}}
+\eeqn
+}}{~\spc{9}}
+
+
+
+\subquestionwithpoints{1} If $n$ is large, do you expect $CR_{\theta, 95\%} \approx CI_{\theta, 95\%}$? Yes / no.
+
+\iftoggle{solutions}{\inred{
+Yes.
+}}{~\spc{-0.5}}
+
+\subquestionwithpoints{5} Write an expression that will return a the Bayesian p-value for the test $H_0: \theta = \theta_0$ with a margin of equivalence $\delta$ after seeing the data $\x$.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+p_{val} = \texttt{plgamma}\parens{\theta_0 + \delta, n\xbar + n_0\mu_0, n + n_0} - \texttt{plgamma}\parens{\theta_0 - \delta, n\xbar + n_0\mu_0, n + n_0}
+\eeqn
+}}{~\spc{5}}
+\pagebreak
+
+
+\subquestionwithpoints{10} Derive the distribution of $X_\star$, the next future observation, given the data $\x$. Don't forget the $\indic{x_\star \in S_{X_\star}}$ term. If the answer is a brand name rv, indicate it as so and find its parameters.
+
+
+\iftoggle{solutions}{\inred{
+\beqn
+p_{X_\star|\x}(X_\star~|~\x) &=& \int_\reals p_{X_\star|\theta}(X_\star|\theta) f_{\theta|\x}(\theta~|~\x) d\theta \\
+%%%%
+&=& \int_\reals 
+\parens{\frac{e^{-e^{\theta}} \tothepow{e^{\theta}}{x_\star}}{x_\star!}\indic{x_\star \in \naturals_0}}
+\parens{\frac{(n + n_0)^{n\xbar + n_0\mu_0}}{\Gamma(n\xbar + n_0\mu_0)} e^{ (n\xbar + n_0\mu_0)\theta-(n + n_0)e^{\theta}}}
+d\theta \\
+%%%%
+&\propto& \frac{\indic{x_\star \in \naturals_0}}{x_\star!}
+\int_\reals e^{ (n\xbar + n_0\mu_0 + x_\star)\theta -(n + n_0 - 1)e^{\theta} }
+d\theta \\
+%%%%
+&=& \frac{\Gamma(n\xbar + n_0\mu_0 + x_\star)}{(n + n_0 + 1)^{n\xbar + n_0\mu_0 + x_\star} x_\star!}
+\indic{x_\star \in \naturals_0} \\
+&\propto& \frac{\Gamma(n\xbar + n_0\mu_0 + x_\star)}{ x_\star!} \tothepow{\oneover{n + n_0 + 1}}{x_\star}
+\indic{x_\star \in \naturals_0} \\
+%%%%
+&\propto& \text{ExtNegBin}\parens{n\xbar + n_0\mu_0, \frac{n + n_0}{n + n_0 + 1}}
+\eeqn
+
+Note: this is the same posterior predictive distribution we derived in class using the hyperparemeters specified by pseudodata, i.e., $f(\theta) = \gammanot{\alpha = n_0\mu_0}{\beta = n_0}$. It makes sense that the posterior predictive distribution will be the same regardless of the parameterization as the parameter itself has been margined out when computing $p_{X_\star|\x}(X_\star~|~\x)$. (It shouldn't matter which scale the parameter is measured).
+}}{~\spc{-0.5}}
+
+\end{enumerate}
+
+\end{document}
+
