@@ -3,7 +3,7 @@
 \include{preamble}
 
 \newtoggle{solutions}
-%\toggletrue{solutions}
+\toggletrue{solutions}
 
 \title{Math 341 / 641 Fall \the\year{} \\ Final Examination \iftoggle{solutions}{\inred{Solutions}}}
 \author{Professor Adam Kapelner}
@@ -181,7 +181,7 @@ e^{\theta / 2} \propto \text{LogGamma}(1/2, 0)
 \subquestionwithpoints{6} Now let $f(\theta) = \text{LogGamma}(a,b)$, the general rv where $a,b >0$, and rederive the posterior.
 
 \iftoggle{solutions}{\inred{
-Note $f(\theta) \propto e^{a\theta -be^{\theta}}$. We can now piggyback from part (l) and start here:
+Note $f(\theta) \propto e^{a\theta -be^{\theta}}$. We can piggyback from part (l) and start here:
 
 \beqn
 f(\theta~|~\x) &\propto& e^{n\xbar \theta - n e^{\theta} } f(\theta) \\
@@ -271,7 +271,7 @@ where we have hyperparameters $n_0 \geq 0, \mu_0 \geq 0$.
 }}{~\spc{4}}
 \pagebreak
 
-For the remainder of this problem, let \texttt{qlgamma}($q$, $a$, $b$) be the function that returns the $q$th quantile of the rv \text{LogGamma}($a$, $b$) and \texttt{plgamma}($x$, $a$, $b$) be the CDF $F(x)$ of the rv \text{LogGamma}($a$, $b$).
+For the remainder of this problem, let \texttt{qlgamma}($q$, $a$, $b$) be the function that returns the $q$th quantile of the rv \text{LogGamma}($a$, $b$) and \texttt{plgamma}($x$, $a$, $b$) be the CDF $F(x)$ of the rv \text{LogGamma}($a$, $b$). To be clear: you cannot use these functions to answer questions before this point in the exam.
 
 
 \subquestionwithpoints{5} Write an expression that will return a 95\% credible region for $\theta$ after seeing the data $\x$.
@@ -288,10 +288,12 @@ CR_{\theta, 95\%} = \bracks{\texttt{qlgamma}\parens{.025, n\xbar + n_0\mu_0, n +
 
 
 \iftoggle{solutions}{\inred{
-For this we need the delta method. In a previous question we found that $\thetahathatmle = \natlog{\xbar}$. We have $\theta = g(\lambda) = \natlog{\lambda}$ and thus $g'(\lambda) = \lambda^{-1}$. You either have proved or can prove quickly that $\doublehat{\lambda}^{MLE} = \xbar$. Hence $\sd{\hat{\lambda}^{MLE}} = \frac{\sigsq}{n} = \frac{\lambda}{n}$ and thus $\doublehat{\mathbb{S}\text{D}}\bracks{\hat{\lambda}^{MLE}} = \frac{\xbar}{n}$. We now have everything we need for the formula:
+For this we need the delta method. In a previous question we found that $\thetahathatmle = \natlog{\xbar}$. We have $\theta = g(\lambda) = \natlog{\lambda}$ and thus $g'(\lambda) = \lambda^{-1}$. You either have proved or can prove quickly that $\doublehat{\lambda}^{MLE} = \xbar$. Hence $\sd{\hat{\lambda}^{MLE}} = \sqrt{\frac{\sigsq}{n}} = \sqrt{\frac{\lambda}{n}}$ and thus $\doublehat{\mathbb{S}\text{D}}\bracks{\hat{\lambda}^{MLE}} = \sqrt{\frac{\xbar}{n}}$. We now have everything we need for the formula:
 
 \beqn
-CI_{\theta, 95\%} \approx \bracks{\thetahathatmle \pm 1.96\, g'\parens{\doublehat{\lambda}^{MLE}} \doublehat{\mathbb{S}\text{D}}\bracks{\hat{\lambda}^{MLE}}} = \bracks{\natlog{\xbar} \pm 1.96 \parens{\oneover{\xbar}} \parens{\frac{\xbar}{n}}} = \bracks{\natlog{\xbar} \pm  \frac{1.96}{n}}
+CI_{\theta, 95\%} &\approx& \bracks{\thetahathatmle \pm 1.96\, g'\parens{\doublehat{\lambda}^{MLE}} \doublehat{\mathbb{S}\text{D}}\bracks{\hat{\lambda}^{MLE}}} \\
+&=& \bracks{\natlog{\xbar} \pm 1.96 \parens{\oneover{\xbar}} \sqrt{\frac{\xbar}{n}}} \\
+&=& \bracks{\natlog{\xbar} \pm  1.96 \frac{1}{\sqrt{n\xbar}}}
 \eeqn
 }}{~\spc{9}}
 
